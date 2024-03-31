@@ -6,23 +6,23 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         String input = sc.next().toUpperCase();
         sc.close();
-        int pay=1;
-        int payda=1;
+        int numerator=1;
+        int denominator=1;
         for(int i=0; i<input.length(); i++){
             eger[((int) input.charAt(i))-'A']++;
         }
         for(int ii=input.length(); ii>0; ii--){
-                pay *= ii;
+                numerator *= ii;
         }
         for(int iii=0; iii<eger.length; iii++){
             for(int iv=eger[iii]; iv>0; iv--){
                 if(iv!=0){
-                payda*=iv;
+                denominator*=iv;
                 }
             }
         }
         int a=0;
-        System.out.println(pay/payda);
+        System.out.println(numerator/denominator);
         Character[] acter = new Character[26];
         for(int iv=0; iv< eger.length; iv++) {
             for (int v = 0; v < eger[iv]; v++) {
@@ -36,7 +36,7 @@ public class Main {
         Character[] d= new Character[input.length()];
         List<Character> characterList = Arrays.asList(acter);
         ArrayList<String> stringArrayList= new ArrayList<>();
-        while(b<=(pay/payda)) {
+        while(b<=(numerator/denominator)) {
             int sayac=0;
             Collections.shuffle(characterList);
             characterList.toArray(acter);
